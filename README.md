@@ -39,6 +39,13 @@ This project serves as an attempt to take a first step towards user interfaces o
 
 For a smooth experience, users should review the following special comments, which include important instructions, tips, and suggestions.
 
+- This project is designed to run on a dedicated Linux (Ubuntu 20.04) machine.  Because of certain limitations that are inherent with Virtual Boxes and Microsoft's Windows Subsystem for Linux (WSL), Webcams cannot be counted on to reliably operate on these platforms.
+- This package requires Google Earth Desktop Pro to be installed on the local machine.  If it is not already installed, the application automatically be installed during the pip3 install of the PyHand-Earth project.  In addition, a relatively large neural network learning model .h5 file will be downloaded.  Consequently, please be patient while pip3 installing this package.
+- This project requires many other pip3 installed high-performant libraries to work in unison, which due to all the threading involved, was not the easiest task to accomplish.  Therefore, please also be patient while these libraries load and initialize.  Whereas some projects may require only one or two such libraries, this one incorporates TensorFlow, OpenCV, PyQt, and maplotlib, among others.
+- Because of the inherent physical limitations of an ordinary Webcam, the hand gesture prediction will work most accurately when a blank, light-colored (e.g., white or cream) wall is positioned behind the user.
+- There are eight available hand gestures to control navigation in Google Earth.  For a smoother experience, a few moments should be taken to familiarize yourself with these different gestures.  These gestures, together with their corresponding navigation motions, will be displayed once the program runs.
+- When starting gesture navigation, the user's hand should be positioned so that it fills a good portion of the orange bounding rectangle in the live video window once it opens.
+- For academic purposes (as discussed in advance with J.B.), the live video window also contains text displaying the deep learning model's prediction values for each of the available eight hand gestures, as well as that for a blank wall.
 
 
 
