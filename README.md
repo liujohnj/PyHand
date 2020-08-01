@@ -37,6 +37,9 @@ This project serves as an attempt to take a first step towards user interfaces o
 
 ## Special Comments
 
+For a smooth experience, users should review the following special comments, which include important instructions, tips, and suggestions.
+
+
 
 
 ## Installation
