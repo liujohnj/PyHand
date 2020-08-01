@@ -40,16 +40,21 @@ This project serves as an attempt to take a first step towards user interfaces o
 For a smooth experience, users should review the following special comments, which include important instructions, tips, and suggestions.
 
 - This project is designed to run on a dedicated Linux (Ubuntu 20.04) machine.  Because of certain limitations that are inherent with Virtual Boxes and Microsoft's Windows Subsystem for Linux (WSL), Webcams cannot be counted on to reliably operate on these substitute platforms.
-- This package requires Google Earth Desktop Pro to be installed on the local machine.  If it is not already installed, the application automatically be installed during the pip3 install of the PyHand-Earth project.  In addition, a relatively large neural network learning model .h5 file will be downloaded.  Consequently, please be patient while pip3 installs this package.
-- This project requires many other pip3 installed high-performant libraries to work in unison, which due to all the threading involved, was not the easiest task to accomplish.  Therefore, please also be patient while these libraries load and initialize.  Whereas some projects may require only one or two such libraries, this one incorporates TensorFlow, OpenCV, PyQt, and maplotlib, among others.  Consequently, it may take a few seconds for the user interface to fully load, and for certain video windows to open and close.
+- During the setup installation, multiple libraries upon which the program is dependendent will be downloaded, and so please be a little patient during this process.
+- As noted further below, due to dependencies that are required in order for the principal pip installed libraries to <i>play nice together</i>, certain other libraries will need to be apt-get installed (as previously cleared by J.B.).
+- This package requires Google Earth Pro desktop to be installed on the local machine.  If it is not already installed, the Google Earth Pro application automatically will be installed the first time you run the program.  A relatively large neural network learning model .h5 file also will be downloaded.  Consequently, please make allowances the first time you run the program.
+- This project requires many other pip3 installed high-performant libraries to work in unison, which due to all the threading involved, was not the easiest task to accomplish.  Therefore, please also be patient while these libraries load and initialize.  Whereas some projects may require only one or two such libraries, this one incorporates TensorFlow/Keras, OpenCV, PyQt, maplotlib, and numpy, among others.  Consequently, it may take a few seconds for the user interface to fully load, and for certain video windows to open and close.
 - Because of the inherent physical limitations of an ordinary Webcam, the hand gesture prediction will work most accurately when a blank, light-colored (e.g., white or cream) wall is positioned behind the user.
 - There are eight available hand gestures to control navigation in Google Earth.  For a smoother experience, a few moments should be taken to familiarize yourself with these different gestures.  These gestures, together with their corresponding navigation motions, will be displayed once the program runs.
 - When starting gesture navigation, the user's hand should be positioned so that it fills a good portion of the orange bounding rectangle in the live video window once it opens.
 - In the event the prediction gets stuck on the wrong gesture, merely shake your hand a little and let it reset until the desired motion is achieved.  The learning model is based on over 26,000 images, but the limitation of ordinary Webcams, when coupled with varied lighting, and backgrounds, and skin tones, can sometimes result in incorrect predictions, which easily can be reset as described.
 - If you remove your hand completely such that only a blank wall occupies the orange bounding rectangle, all navigation and motion should halt.
+- In case you need a refresher on the above, the program includes a "Gesture Navigation Tips" button that will display the most important tips.
 - For academic purposes (as discussed in advance with J.B.), the live video window also contains text displaying the deep learning model's prediction values for each of the available eight hand gestures, as well as that for a blank wall.  (A future, non-academic, deployment instead will just display the controlling navigation motion in order to simplify the user's experience.)
-- To 
-
+- The GitHub repository root folder (under `master` branch) includes two sub-folders:
+  - `new_main`:  Contains the most up-to-date files.
+  - `old_code_structure`:  Archived files.
+- A PDF file detailing contributions made outside of GitHub to this project is included in the `master` branch of the root folder.
 
 
 ## Installation
@@ -62,7 +67,7 @@ For a smooth experience, users should review the following special comments, whi
 
 ### Dependencies needed:
 
-- Google Earth desktop (will be installed automatically if it is not already present in the environment)
+- Google Earth desktop (will be installed automatically the first time the program is run if it is not already present in the environment)
 - apt-get dependencies required to make pip installed packages work together 
 
 ```shell
@@ -102,53 +107,37 @@ needed in order to locate images in the Google Earth application so that we can 
 
 
 
-> install all requirements for PyHand-Earth with:
+> install all the requirements for PyHand-Earth from a terminal command line with:
 
 ```shell
 
-$ pip3 install PyHand-Earth
+$ pip3 install PyHand-Earth==0.2.24
 
 ```
-
-  OR
-
-> install them individually with:
-
-  
-
-```shell
-
-$ pip3 install opencv-python==4.2.0.34
-
-$ pip3 install matplotlib==3.2.2
-
-$ pip3 install --upgrade tensorflow==2.2.0
-
-$ pip3 install Keras==2.4.2
-
-$ pip3 install pyautogui==0.9.50
-
-$ pip3 install PyQt5
-
-$ pip3 install psutil==5.7.0
-
-```
-
-
 
 
 
 ## Start 
 
 
-#### To  Start PyHand-Earth:
-- Navigate to the virtual environment folder, pip install pyhand-earth, then cd lib/python3.8/site-packages/PyHand-Earth/tyler/testing/new, then python3 [main_qt.py](http://main_qt.py/ "http://main_qt.py/")
+#### To launch PyHand-Earth:
+
+From the command line, run:
 
 
 ```shell
 
-$ python3 main_qt.py
+$ PyHand-Earth
 
+```
+
+OR
+
+navigate to ....... and run:
+
+```shell
+
+$ python3 main_qt.py
 ```
 
 - Two windows will show up:
